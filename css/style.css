@@ -25,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+    width: 100%;
 }
 
 ol, ul {
@@ -50,3 +51,241 @@ table {
 
 
 /* Write your css below here */
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #ebe6e6;
+    overflow-x: hidden;
+    display: grid;
+    grid-template: "head" 80px "title" 80px "section" 1fr "check" 80px "foot" 80px / 1fr;
+}
+
+header {
+    grid-area: head;
+    background-color: #adacd6;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+	animation: slide-in 1s ease-in-out;
+}
+
+header img {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+header h2 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+header .left {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+header .right {
+    margin-right: 10px;
+    /* flex: 1; */
+    
+}
+
+header nav a {
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #08080f;
+}
+
+.title {
+    grid-area: title;
+    text-align: center;
+    margin-top: 35px;
+}
+
+section {
+    grid-area: section;
+    background: white;
+    width: 95vw;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: grid;
+    background-color: #f1f1f2;
+    padding: 20px;
+    grid-template-columns: 1fr;
+    grid-gap: 20px 0;
+}
+
+.british-staff {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.britishstaff-image {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.britishstaff-image img {
+    max-height: 100%;
+    max-width: 100%;
+    margin-top: 5px;
+}
+
+.britishstaff-image video {
+    height: 150px;
+}
+
+.britishstaff {
+    padding: 10px;
+    text-align: center;
+}
+
+.britishstaff p {
+    font-size: 12px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+
+button.add {
+    background-color: #007bff;
+    align-self: center;
+    color: #fff;
+    border: none;
+    margin-bottom: 12px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.britishstaff-image img:hover {
+	transform: scale(1.1);	
+}
+
+button.check {
+    width: 300px;
+}
+
+.check {
+    grid-area: check;
+}
+
+footer {
+    grid-area: foot;
+    background: #111113;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer h2,
+h3 {
+    margin-top: 10px;
+}
+
+.britishstaff h3:last-child {
+    margin-top: 5px;
+}
+
+a:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+header img:hover {
+    transform: rotate(0.9turn);
+}
+/* 
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    } */
+}
+
+@media screen and (width >=350px) {
+    /* header nav a {
+        font-size: 12px;
+    } */
+}
+
+header.left {
+    display: none;
+}
+
+@media screen and (width <=580px) {
+    header {
+    }
+
+    header nav a{
+        display: none;
+    }
+
+    .left h2{
+        display: none;
+    }
+
+}
+
+@media screen and (width >=581px){
+    .right span{
+        display: none;
+    }
+
+    section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media screen and (width >=768px) {
+    section {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 15px;
+    }
+
+    header nav a {
+        font-size: large;
+    }
+}
+
+@media screen and (width >=1024px) {
+    section {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (width >=1440px) {
+    section {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
